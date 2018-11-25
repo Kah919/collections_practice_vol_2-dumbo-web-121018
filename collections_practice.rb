@@ -78,11 +78,31 @@ def find_cool(cool)
   end
 end
 
+# {
+#   "flatiron school bk" => {
+#     :location => "NYC"
+#   },
+#   "flatiron school" => {
+#     :location => "NYC"
+#   },
+#   "dev boot camp" => {
+#     :location => "SF"
+#   },
+#   "dev boot camp chicago" => {
+#     :location => "Chicago"
+#   },
+#   "general assembly" => {
+#     :location => "NYC"
+#   },
+#   "Hack Reactor" => {
+#     :location => "SF"
+#   }
+# }
 def organize_schools(schools)
   organized_schools = {
-    NYC: [],
-    SF: [],
-    Chicago: []
+    "NYC"=> [],
+    "SF"=> [],
+    "Chicago"=> []
   }
   schools.each do |school|
     school.each do |boot_camp, location|
