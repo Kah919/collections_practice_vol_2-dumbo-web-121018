@@ -69,5 +69,11 @@ ashley = Hash.new(0)
 end
 
 def find_cool(cool)
-
+  cool.each do |person|
+    person.each do |key, value|
+      if value == "cool"
+        return person
+      end
+    end
+  end
 end
