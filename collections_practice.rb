@@ -78,7 +78,7 @@ def find_cool(cool)
   end
 end
 
-def orgranized_schools(schools)
+def organized_schools(schools)
   organized = {
     NYC: [],
     SF: [],
