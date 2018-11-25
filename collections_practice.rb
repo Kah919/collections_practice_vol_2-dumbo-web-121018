@@ -114,10 +114,10 @@ def organize_schools(schools)
               organized_schools[key] << school
             end
           end
-          
+
         end
       end
     end
-  
+
   return organized_schools
 end
