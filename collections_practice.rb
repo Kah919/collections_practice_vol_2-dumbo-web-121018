@@ -104,18 +104,20 @@ def organize_schools(schools)
     "SF"=> [],
     "Chicago"=> []
   }
-  schools.each do |school|
-    school.each do |boot_camp, location|
-      location.each do |k, v| #v is the location name | k is the actual location key
-        if v == "NYC"
-          organized_schools[:NYC] << boot_camp.to_s
-        elsif v == "SF"
-          organized_schools[:SF] << boot_camp.to_s
-        else
-          organized_schools[:Chicago] << boot_camp.to_s
+
+    schools.each do |obj|
+      obj.each do |school, location| #school is the bootcamp and location will give us location key
+        location.each do |location2, place|
+
+          organized_schools.each do |key, value|
+            if key == place
+              organized_schools[key] << school
+            end
+          end
+          
         end
       end
     end
-  end
+  
   return organized_schools
 end
