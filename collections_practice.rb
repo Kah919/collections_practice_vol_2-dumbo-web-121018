@@ -104,7 +104,7 @@ def organize_schools(schools)
   schools.each do |obj|
     obj.each do |boot_camp, info|
       info.each do |info2, location|
-        organized[location] = []  
+        organized[location] = []
       end
     end
   end
