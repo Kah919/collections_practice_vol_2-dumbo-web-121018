@@ -111,7 +111,7 @@ def organize_schools(schools)
 
           organized_schools.each do |key, value|
             if key == place
-              organized_schools[key] << school
+              organized_schools[key] << school.to_s
             end
           end
 
