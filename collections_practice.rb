@@ -79,7 +79,7 @@ def find_cool(cool)
 end
 
 def organize_schools(schools)
-  organized = {
+  organized_schools = {
     NYC: [],
     SF: [],
     Chicago: []
@@ -88,14 +88,14 @@ def organize_schools(schools)
     school.each do |boot_camp, location|
       location.each do |k, v| #v is the location name | k is the actual location key
         if v == "NYC"
-          organized[:NYC] << boot_camp
+          organized_schools[:NYC] << boot_camp
         elsif v == "SF"
-          organized[:SF] << boot_camp
+          organized_schools[:SF] << boot_camp
         else
-          organized[:Chicago] << boot_camp
+          organized_schools[:Chicago] << boot_camp
         end
       end
     end
   end
-  return organized
+  return organized_schools
 end
