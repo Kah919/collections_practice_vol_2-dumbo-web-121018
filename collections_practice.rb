@@ -99,7 +99,25 @@ end
 #   }
 # }
 def organize_schools(schools)
-  locations_hash = {}
-    schools.collect {|k,v| locations_hash[v[:location]] = []}
-    locations_hash.each {|k,v| schools.each {|k1,v1| if k == v1[:location] then v << k1
+  organized_schools = {
+    "NYC"=> [],
+    "SF"=> [],
+    "Chicago"=> []
+  }
+
+    schools.each do |obj|
+      obj.each do |school, location| #school is the bootcamp and location will give us location key
+        location.each do |location2, place|
+
+          organized_schools.each do |key, value|
+            if key == place
+              organized_schools[key] << school.to_s
+            end
+          end
+
+        end
+      end
+    end
+
+  return organized_schools
 end
