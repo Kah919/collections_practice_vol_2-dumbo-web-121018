@@ -100,20 +100,22 @@ end
 # }
 
 def organize_schools(schools)
-  organized = Hash.new()
-  schools.each do |obj|
-    obj.each do |boot_camp, info|
-      info.each do |info2, location|
-        organized[location] = []
-      end
+  organized = {}
+
+  schools.each do |boot_camps, location_key|
+    location_key.each do |key, location|
+      organized[location] = []
     end
   end
+  schools.each do |boot_camps, location_key|
+    location_key.each do |key, location|
 
-  schools.each do |obj|
-    obj.each do |boot_camp, info|
-      info.each do |info2, location|
-        organized[location] << boot_camp
+      organized.each do |place, value|
+        if location == place
+          organized[location] << boot_camps
+        end
       end
+
     end
   end
   return organized
