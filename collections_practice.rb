@@ -69,11 +69,10 @@ ashley = Hash.new(0)
 end
 
 def find_cool(cool)
-cool_kid = []
   cool.each do |person|
     person.each do |key, value|
       if value == "cool"
-        cool_kid << person
+        return [person]
       end
     end
   end
