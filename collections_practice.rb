@@ -78,6 +78,24 @@ def find_cool(cool)
   end
 end
 
-def organized_schools(schools)
-
+def orgranized_schools(schools)
+  organized = {
+    NYC: [],
+    SF: [],
+    Chicago: []
+  }
+  schools.each do |school|
+    school.each do |boot_camp, location|
+      location.each do |k, v| #v is the location
+        if v == "NYC"
+          organized[:NYC] << boot_camp
+        elsif v == "SF"
+          organized[:SF] << boot_camp
+        else
+          organized[:Chicago] << boot_camp
+        end
+      end
+    end
+  end
+  return organized
 end
